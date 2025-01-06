@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        
+        header{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #ffffffe2;
+        width: 100%;
+        color: var(--colorH1);
+        padding: 40px 0;
+        height: 3.6rem;
+        animation: shadow 2s alternate infinite;
+        transition: all 0.3s ease;
+        }       
+
+        
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 80px #06060641;
+    }
+    100% {
+        box-shadow: 0 0 90px #00000086;
+    }
+}
+
+        .sticky{
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+        }
+        .logo{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        }
+        header>.logo>img{
+        height: 3.5rem;
+        width: 3.5rem;
+        }
+
+        nav>ul{
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        }
+        nav>ul>li>a{
+        text-decoration: none;
+        color: #000000;
+        cursor: pointer;
+        }
+        nav>ul>li>.li3{
+        background-color: #000000b8;
+        border-radius: 15px;
+        padding: 5px 12px;
+        color: #fff;
+        }
+
+        nav>ul>li{
+        font-size: 1rem;
+        transition: all 0.3s ease-in-out;
+        }
+        nav>ul>li:hover{
+        padding: 5px 5px;
+        border: 1px solid #000000;;
+        transform: perspective(500px) rotateY(30deg);
+        }    
+
+        /* Hero Section */
+        .hero {
+            background: grey;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+        }
+        .hero img{
+            height: 12rem;
+            width: 12rem;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #4d5760;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #484848;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10rem;
+            align-items: center;
+
+        }
+        .about-content #p1{
+            border-radius: 67px 56px 22px 100px / 21px 100px 94px 56px; 
+            padding: 20px;
+            border: 1px solid #00000039;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Values */
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .allsection{
+            background-image: radial-gradient(#999999d2 1px, transparent 1px), radial-gradient(#999999cf 1px, transparent 1px);
+	        background-size: 19px 19px;
+	        background-position: 0 0, 9.5px 9.5px;
+        }
+        /* Contact Section */
+        .contact {
+            height: 310px;
+            padding: 30px;
+            background-color: #0e2133;
+            color: white;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
+
+        <nav>
+            <ul>
+                <li class="li1"><a href="index.html">Beranda</a></li>
+                <li><a href="transaksi.html">Transaksi</a></li>
+                <li><a href="profile.html" class="li3">Profile</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="img/logo.png" alt="">
+            <h1>Koperasi Simpan Pinjam Sejahtera</h1>
+            <p>Mitra Terpercaya untuk Kesejahteraan Finansial Anggota</p>
+        </div>
+    </section>
+
+    <div class="allsection">
+
+            <!-- About Section -->
+        <section class="section about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Tentang Kami</h2>
+                    <p>Melayani dengan Integritas dan Profesionalisme</p>
+                </div>
+                <div class="about-content">
+                    <div>
+                        <p>Koperasi Simpan Pinjam Sejahtera didirikan pada tahun 2010 dengan visi menjadi lembaga keuangan mikro yang terpercaya dan berkontribusi dalam meningkatkan kesejahteraan anggota dan masyarakat.</p>
+                        <br>
+                        <p id="p1">Selama lebih dari satu dekade, kami telah melayani ribuan anggota dengan berbagai layanan keuangan yang inovatif dan bermanfaat. Komitmen kami terhadap transparansi, profesionalisme, dan pelayanan prima menjadikan kami sebagai pilihan utama dalam layanan simpan pinjam.</p>
+                    </div>
+                    <div>
+                        <img src="img/kantor.jpg" alt="Kantor Koperasi" style="width: 60%; border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Layanan Kami</h2>
+                    <p>Solusi Keuangan untuk Setiap Kebutuhan</p>
+                </div>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>Simpanan</h3>
+                        <p>Berbagai produk simpanan dengan bunga kompetitif:</p>
+                        <ul>
+                            <li>Simpanan Pokok</li>
+                            <li>Simpanan Wajib</li>
+                            <li>Simpanan Sukarela</li>
+                            <li>Deposito Berjangka</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Pinjaman</h3>
+                        <p>Solusi pinjaman untuk berbagai keperluan:</p>
+                        <ul>
+                            <li>Pinjaman Modal Usaha</li>
+                            <li>Pinjaman Konsumtif</li>
+                            <li>Pinjaman Pendidikan</li>
+                            <li>Pinjaman Darurat</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Konsultasi</h3>
+                        <p>Layanan konsultasi keuangan profesional:</p>
+                        <ul>
+                            <li>Perencanaan Keuangan</li>
+                            <li>Konsultasi Bisnis</li>
+                            <li>Pendampingan Usaha</li>
+                            <li>Edukasi Keuangan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Values Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Nilai-Nilai Kami</h2>
+                    <p>Prinsip yang Menjadi Landasan Kerja Kami</p>
+                </div>
+                <div class="values">
+                    <div class="value-card">
+                        <h3>Kepercayaan</h3>
+                        <p>Membangun dan menjaga kepercayaan anggota melalui pengelolaan yang transparan dan akuntabel.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Profesionalisme</h3>
+                        <p>Memberikan layanan terbaik dengan standar profesional dan kompetensi yang tinggi.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Kekeluargaan</h3>
+                        <p>Mengutamakan asas kekeluargaan dalam setiap aspek pelayanan dan pengelolaan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    <!-- Contact Section -->
+    <section class="section contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Kami Siap Melayani Anda</p>
+            </div>
+            <div class="contact-info">
+                <p>Alamat: Jl. Raya Sejahtera No. 123, Kota Maju</p>
+                <p>Telepon: (021) 1234-5678</p>
+                <p>Email: lildho@koperasisejahtera.com</p>
+                <p>Jam Operasional: Senin - Jumat, 08.00 - 16.00 WIB</p>
+            </div>
+        </div>
+    </section>
+
+    
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > header.offsetHeight) {
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
+    });
+</script>
+</body>
+</html>

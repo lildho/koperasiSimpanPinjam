@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: radial-gradient(#999999d2 1px, transparent 1px), radial-gradient(#999999cf 1px, transparent 1px);
+	        background-size: 19px 19px;
+	        background-position: 0 0, 9.5px 9.5px;
+            animation: bola 1.5s ease-in-out infinite;
+        }
+        @keyframes bola {
+            0% {
+                background-image: radial-gradient(#1100ff 1px, transparent 1px), radial-gradient(#999999cf 1px, transparent 1px);
+	       
+            }
+            100% {
+                background-image: radial-gradient(#969191 1px, transparent 1px), radial-gradient(#ff0000cf 1px, transparent 1px);
+	        
+            }
+        }
+        
+        .login-container {
+            background: white;
+            padding: 2rem;
+            width: 100%;
+            max-width: 320px;
+            transform: perspective(500px) rotateY(40deg) rotateX(-20deg);
+            filter: opacity(0.6) drop-shadow(-20px 20px 0px rgba(0, 0, 0, 0.148));
+            border-radius: 47px 100px 26px 58px / 100px 41px 100px 11px; 
+            border: 1px solid #3a0404;
+            transition: all 0.3s ease;
+        }
+        
+        .login-container:hover {
+            transform: perspective(500px) rotateY(0deg);
+            filter: opacity(1) drop-shadow(20px 20px 0px rgba(0, 0, 0, 0.148));
+          
+        }
+
+
+        .login-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4A90E2;
+        }
+
+        .border-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 5px 18px;
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #333;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .border-button:hover {
+            color: rgb(0, 0, 0);
+            border-radius: 0 60px 0px 140px;
+            transform: perspective(90px) rotateY(30deg);
+        }
+        .border-button a {
+            text-decoration: none;
+            color: inherit;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="login-title">Login</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Masukkan username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password">
+            </div>
+
+            <button class="border-button"><a href="index.html">Login</a></button>
+
+        </form>
+    </div>
+</body>
+</html>
